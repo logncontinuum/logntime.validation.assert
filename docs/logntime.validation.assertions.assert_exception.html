@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
-        <title>logntime - logn.validation.assertions 0.0.1 documentation</title>
+        <title>logntime.validation.assertions.assert_exception module - logn.validation.assertions 0.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -186,24 +186,39 @@
           </label>
         </div>
         <article role="main">
-          <section id="logntime">
-<h1>logntime<a class="headerlink" href="#logntime" title="Permalink to this headline">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="logntime.html">logntime package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="logntime.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="logntime.validation.html">logntime.validation package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="logntime.validation.html#subpackages">Subpackages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="logntime.validation.html#module-logntime.validation">Module contents</a></li>
+          <section id="module-logntime.validation.assertions.assert_exception">
+<span id="logntime-validation-assertions-assert-exception-module"></span><h1>logntime.validation.assertions.assert_exception module<a class="headerlink" href="#module-logntime.validation.assertions.assert_exception" title="Permalink to this headline">#</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="logntime.validation.assertions.assert_exception.add_indentation">
+<span class="sig-name descname"><span class="pre">add_indentation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation_in_spaces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/logntime/validation/assertions/assert_exception.html#add_indentation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#logntime.validation.assertions.assert_exception.add_indentation" title="Permalink to this definition">#</a></dt>
+<dd><p>Adds indentation to all the lines in the text</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> – </p></li>
+<li><p><strong>indentation_in_spaces</strong> – </p></li>
 </ul>
-</li>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The text with indentation added</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="logntime.validation.assertions.assert_exception.assert_exception">
+<span class="sig-name descname"><span class="pre">assert_exception</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">BaseException</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BaseException</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_message_indentation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/logntime/validation/assertions/assert_exception.html#assert_exception"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#logntime.validation.assertions.assert_exception.assert_exception" title="Permalink to this definition">#</a></dt>
+<dd><p>Asserts the subject exception is an instance of the reference_type.</p>
+<p>If it fails throws an exception. The error message includes the original exception message with extra indentation to facilitate reading.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reference_type</strong> – A subclass of BaseException</p></li>
+<li><p><strong>subject</strong> – exception under examination</p></li>
+<li><p><strong>original_message_indentation</strong> – Extra indentation added to the exception under examination to facilitate reading in case of failure.</p></li>
 </ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="logntime.html#module-logntime">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</div>
+</dd>
+</dl>
+</dd></dl>
 </section>
 
         </article>
