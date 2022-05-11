@@ -1,1 +1,1 @@
-sphinx-apidoc -o .\source ..\logntime
+sphinx-apidoc -o .\source ..\logntime -e
