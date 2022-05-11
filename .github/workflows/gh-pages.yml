@@ -28,6 +28,7 @@ jobs:
       with:
         documentation_path: ./docs/source
         requirements_path: ./requirements.txt
+        target_path: ./docs
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
