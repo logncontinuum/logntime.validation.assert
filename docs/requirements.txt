@@ -1,1 +1,2 @@
+dictdiffer~=0.9.0
 furo==2022.4.7
