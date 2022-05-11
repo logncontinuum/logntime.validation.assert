@@ -1,3 +1,10 @@
 [build-system]
-requires = [ "setuptools>=58", "wheel"]
+requires = [ "setuptools>=58", "wheel", "twine"]
 build-backend = "setuptools.build_meta"
+
+[project.optional-dependencies]
+doc = [
+    "sphinx",
+    "sphinx-autobuild",
+    "rinohtype"
+]
