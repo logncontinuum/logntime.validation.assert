@@ -3,7 +3,7 @@ from logntime.validation.assertions.transform import bypass
 
 def assert_equals(reference: object, subject: object, custom_message: str = "", accumulator: list = None, format_data=bypass):
     """
-    Validates that two objects are equal.
+    Validates equality between objects.
 
     :param reference: Source of truth to compare equality
     :param subject: Object under analysis
