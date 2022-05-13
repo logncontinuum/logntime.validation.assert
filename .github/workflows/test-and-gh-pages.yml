@@ -16,9 +16,10 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update;
-        sudo apt-get install lilypond timidity imagemagick fonts-noto-cjk graphviz plantuml ffmpeg
     - name: Setup python
       uses: actions/setup-python@v2
+    - name: Install requirements
+      run: pip install -r requirements.txt
     - name: Checkout
       uses: actions/checkout@v3
       with:
@@ -27,7 +28,6 @@ jobs:
       uses: sphinx-notes/pages@v2
       with:
         documentation_path: ./docs/source
-        requirements_path: ./docs/requirements.txt
         target_path: ./docs
     - name: Push changes
       uses: ad-m/github-push-action@master

@@ -1,0 +1,2 @@
+python -m behave ./test/
+
