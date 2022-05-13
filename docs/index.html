@@ -186,18 +186,69 @@
           </label>
         </div>
         <article role="main">
-          <section id="welcome-to-logn-validation-assertions-s-documentation">
-<h1>Welcome to logn.validation.assertions’s documentation!<a class="headerlink" href="#welcome-to-logn-validation-assertions-s-documentation" title="Permalink to this headline">#</a></h1>
-<div class="toctree-wrapper compound">
+          <section id="assertions-documentation">
+<h1>Assertions documentation<a class="headerlink" href="#assertions-documentation" title="Permalink to this headline">#</a></h1>
+<section id="custom-messages">
+<h2>Custom messages<a class="headerlink" href="#custom-messages" title="Permalink to this headline">#</a></h2>
+<p>This is library with functions to exert fancy assertions in test cases.
+It enables attaching a custom messages to the beginning of the text on the exception thrown when the assertion fails.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">logntime.validation.assertions.assert_equals</span> <span class="kn">import</span> <span class="n">assert_equals</span>
+
+<span class="n">custom_message</span> <span class="o">=</span> <span class="s2">"Very important test failed."</span>
+
+<span class="n">expected</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="n">assert_equals</span><span class="p">(</span>
+    <span class="n">expected</span><span class="p">,</span>
+    <span class="n">result</span><span class="p">,</span>
+    <span class="n">custom_message</span><span class="o">=</span><span class="n">custom_message</span>
+<span class="p">)</span>
+
+<span class="c1"># Very important test failed.</span>
+<span class="c1"># Subject is not equal to reference.</span>
+<span class="c1">#     Reference: (1, 2, 3)</span>
+<span class="c1">#     Subject: (1, 2, 3, 4)</span>
+</pre></div>
+</div>
+<p>It also lets you format the “expected” and “result” parameters.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">logntime.validation.assertions.assert_equals</span> <span class="kn">import</span> <span class="n">assert_equals</span>
+
+<span class="n">expected</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="n">def</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="s2">"&gt;"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">data</span><span class="p">))</span>
+
+<span class="n">assert_equals</span><span class="p">(</span>
+    <span class="n">expected</span><span class="p">,</span>
+    <span class="n">result</span><span class="p">,</span>
+    <span class="n">format_data</span><span class="o">=</span><span class="n">to_json</span>
+<span class="p">)</span>
+
+<span class="c1"># Subject is not equal to reference.</span>
+<span class="c1">#    Reference: 1&gt;2&gt;3</span>
+<span class="c1">#    Subject: 5&gt;6&gt;7</span>
+</pre></div>
+</div>
+</section>
+<section id="assert-similarities">
+<h2>Assert similarities<a class="headerlink" href="#assert-similarities" title="Permalink to this headline">#</a></h2>
+<p>It allows to assert equality for dictionaries and prints a report of the difference in case of failure.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">assert_similarities</span>
+</pre></div>
 </div>
 </section>
 <section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">#</a></h1>
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
+<div class="toctree-wrapper compound">
+</div>
+</section>
 </section>
 
         </article>
@@ -239,8 +290,12 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Welcome to logn.validation.assertions’s documentation!</a></li>
+<li><a class="reference internal" href="#">Assertions documentation</a><ul>
+<li><a class="reference internal" href="#custom-messages">Custom messages</a></li>
+<li><a class="reference internal" href="#assert-similarities">Assert similarities</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
 </ul>
 
           </div>

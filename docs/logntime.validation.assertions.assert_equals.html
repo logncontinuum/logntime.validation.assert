@@ -186,11 +186,11 @@
           </label>
         </div>
         <article role="main">
-          <section id="module-logntime.validation.assertions.assert_equals">
-<span id="logntime-validation-assertions-assert-equals-module"></span><h1>logntime.validation.assertions.assert_equals module<a class="headerlink" href="#module-logntime.validation.assertions.assert_equals" title="Permalink to this headline">#</a></h1>
-<dl class="py function">
+          <section id="logntime-validation-assertions-assert-equals-module">
+<h1>logntime.validation.assertions.assert_equals module<a class="headerlink" href="#logntime-validation-assertions-assert-equals-module" title="Permalink to this headline">#</a></h1>
+<span class="target" id="module-logntime.validation.assertions.assert_equals"><span id="assertequals"></span></span><dl class="py function">
 <dt class="sig sig-object py" id="logntime.validation.assertions.assert_equals.assert_equals">
-<span class="sig-name descname"><span class="pre">assert_equals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference:</span> <span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subject:</span> <span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_message:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accumulator:</span> <span class="pre">~typing.Optional[list]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format_data=&lt;function</span> <span class="pre">bypass&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/logntime/validation/assertions/assert_equals.html#assert_equals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#logntime.validation.assertions.assert_equals.assert_equals" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assert_equals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference:</span> <span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subject:</span> <span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_message:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accumulator:</span> <span class="pre">~typing.Optional[list]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format_data=&lt;function</span> <span class="pre">to_caped_str&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/logntime/validation/assertions/assert_equals.html#assert_equals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#logntime.validation.assertions.assert_equals.assert_equals" title="Permalink to this definition">#</a></dt>
 <dd><p>Validates equality between objects.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -199,7 +199,7 @@
 <li><p><strong>subject</strong> – Object under analysis</p></li>
 <li><p><strong>custom_message</strong> – Clarification sentence at the beginning of the error message thrown if the validation fails.</p></li>
 <li><p><strong>accumulator</strong> – List used to aggregate error messages. If not None and the validation fails, no exception is thrown.</p></li>
-<li><p><strong>format_data</strong> – transform the reference and subject before formatting the message</p></li>
+<li><p><strong>format_data</strong> – transform the reference and subject before formatting the message. The default is to_caped_str.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -209,7 +209,7 @@
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="logntime.validation.assertions.assert_equals.assert_not_equals">
-<span class="sig-name descname"><span class="pre">assert_not_equals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference:</span> <span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subject:</span> <span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_message:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accumulator:</span> <span class="pre">~typing.Optional[list]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format_data=&lt;function</span> <span class="pre">bypass&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/logntime/validation/assertions/assert_equals.html#assert_not_equals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#logntime.validation.assertions.assert_equals.assert_not_equals" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">assert_not_equals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference:</span> <span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subject:</span> <span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_message:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accumulator:</span> <span class="pre">~typing.Optional[list]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format_data=&lt;function</span> <span class="pre">to_caped_str&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/logntime/validation/assertions/assert_equals.html#assert_not_equals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#logntime.validation.assertions.assert_equals.assert_not_equals" title="Permalink to this definition">#</a></dt>
 <dd><p>Validates that two objects not are equal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -218,7 +218,7 @@
 <li><p><strong>subject</strong> – Object under analysis</p></li>
 <li><p><strong>custom_message</strong> – Clarification sentence at the beginning of the error message thrown if the validation fails.</p></li>
 <li><p><strong>accumulator</strong> – List used to aggregate error messages. If not None and the validation fails, no exception is thrown.</p></li>
-<li><p><strong>format_data</strong> – transform the reference and subject before formatting the message</p></li>
+<li><p><strong>format_data</strong> – transform the reference and subject before formatting the message. The default is to_caped_str.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>

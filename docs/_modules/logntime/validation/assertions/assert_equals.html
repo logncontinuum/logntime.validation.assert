@@ -186,10 +186,10 @@
         </div>
         <article role="main">
           <h1>Source code for logntime.validation.assertions.assert_equals</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">logntime.validation.assertions.transform</span> <span class="kn">import</span> <span class="n">bypass</span>
+<span></span><span class="kn">from</span> <span class="nn">logntime.validation.assertions.transform</span> <span class="kn">import</span> <span class="n">bypass</span><span class="p">,</span> <span class="n">to_caped_str</span>
 
 
-<div class="viewcode-block" id="assert_equals"><a class="viewcode-back" href="../../../../logntime.validation.assertions.assert_equals.html#logntime.validation.assertions.assert_equals.assert_equals">[docs]</a><span class="k">def</span> <span class="nf">assert_equals</span><span class="p">(</span><span class="n">reference</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">subject</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">custom_message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span> <span class="n">accumulator</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">format_data</span><span class="o">=</span><span class="n">bypass</span><span class="p">):</span>
+<div class="viewcode-block" id="assert_equals"><a class="viewcode-back" href="../../../../logntime.validation.assertions.assert_equals.html#logntime.validation.assertions.assert_equals.assert_equals">[docs]</a><span class="k">def</span> <span class="nf">assert_equals</span><span class="p">(</span><span class="n">reference</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">subject</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">custom_message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span> <span class="n">accumulator</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">format_data</span><span class="o">=</span><span class="n">to_caped_str</span><span class="p">):</span>
     <span class="sd">"""</span>
 <span class="sd">    Validates equality between objects.</span>
 
@@ -197,12 +197,13 @@
 <span class="sd">    :param subject: Object under analysis</span>
 <span class="sd">    :param custom_message: Clarification sentence at the beginning of the error message thrown if the validation fails.</span>
 <span class="sd">    :param accumulator: List used to aggregate error messages. If not None and the validation fails, no exception is thrown.</span>
-<span class="sd">    :param format_data: transform the reference and subject before formatting the message</span>
+<span class="sd">    :param format_data: transform the reference and subject before formatting the message. The default is to_caped_str.</span>
 
 <span class="sd">    :raises Exception: If the reference and the subject are not equal</span>
 <span class="sd">    """</span>
     <span class="k">if</span> <span class="n">reference</span> <span class="ow">is</span> <span class="n">subject</span><span class="p">:</span> <span class="k">return</span>
     <span class="k">if</span> <span class="n">reference</span> <span class="o">==</span> <span class="n">subject</span><span class="p">:</span> <span class="k">return</span>
+
     <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">custom_message</span><span class="si">}</span><span class="s2">Subject is not equal to reference.</span><span class="se">\n</span><span class="s2">    Reference: </span><span class="si">{</span><span class="n">format_data</span><span class="p">(</span><span class="n">reference</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">    Subject: </span><span class="si">{</span><span class="n">format_data</span><span class="p">(</span><span class="n">subject</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
     <span class="n">error</span> <span class="o">=</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 
@@ -212,7 +213,7 @@
         <span class="n">accumulator</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="assert_not_equals"><a class="viewcode-back" href="../../../../logntime.validation.assertions.assert_equals.html#logntime.validation.assertions.assert_equals.assert_not_equals">[docs]</a><span class="k">def</span> <span class="nf">assert_not_equals</span><span class="p">(</span><span class="n">reference</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">subject</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">custom_message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span> <span class="n">accumulator</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">format_data</span><span class="o">=</span><span class="n">bypass</span><span class="p">):</span>
+<div class="viewcode-block" id="assert_not_equals"><a class="viewcode-back" href="../../../../logntime.validation.assertions.assert_equals.html#logntime.validation.assertions.assert_equals.assert_not_equals">[docs]</a><span class="k">def</span> <span class="nf">assert_not_equals</span><span class="p">(</span><span class="n">reference</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">subject</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">custom_message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span> <span class="n">accumulator</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">format_data</span><span class="o">=</span><span class="n">to_caped_str</span><span class="p">):</span>
     <span class="sd">"""</span>
 <span class="sd">    Validates that two objects not are equal.</span>
 
@@ -220,7 +221,7 @@
 <span class="sd">    :param subject: Object under analysis</span>
 <span class="sd">    :param custom_message: Clarification sentence at the beginning of the error message thrown if the validation fails.</span>
 <span class="sd">    :param accumulator: List used to aggregate error messages. If not None and the validation fails, no exception is thrown.</span>
-<span class="sd">    :param format_data: transform the reference and subject before formatting the message</span>
+<span class="sd">    :param format_data: transform the reference and subject before formatting the message. The default is to_caped_str.</span>
 
 <span class="sd">    :raises Exception: If the reference and the subject are not equal</span>
 <span class="sd">    """</span>

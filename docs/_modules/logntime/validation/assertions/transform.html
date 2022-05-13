@@ -193,6 +193,15 @@
     <span class="k">return</span> <span class="n">data</span></div>
 
 
+<div class="viewcode-block" id="to_caped_str"><a class="viewcode-back" href="../../../../logntime.validation.assertions.transform.html#logntime.validation.assertions.transform.to_caped_str">[docs]</a><span class="k">def</span> <span class="nf">to_caped_str</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">limit</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">result</span><span class="p">[:</span> <span class="mi">30</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
 <div class="viewcode-block" id="to_json"><a class="viewcode-back" href="../../../../logntime.validation.assertions.transform.html#logntime.validation.assertions.transform.to_json">[docs]</a><span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
 </pre></div>
